@@ -1,6 +1,4 @@
-const obj = { name: "мечник", health: 10, level: 2, attack: 80, defence: 40 };
-
-export default function orderByProps(obj, arr) {
+export default function orderByProps(obj, arr = []) {
   const res = [];
   const keys = [];
 
@@ -8,8 +6,8 @@ export default function orderByProps(obj, arr) {
     for (const key in obj) {
       if (key === el) {
         res.push({
-          key: `${key}`,
-          value: `${obj[key]}`,
+          key,
+          value: obj[key],
         });
       }
     }
@@ -25,8 +23,8 @@ export default function orderByProps(obj, arr) {
 
   keys.forEach((el) => {
     res.push({
-      key: `${el}`,
-      value: `${obj[el]}`,
+      key: el,
+      value: obj[el],
     });
   });
 
